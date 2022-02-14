@@ -51,7 +51,7 @@ window.addEventListener("click", (e) => {
   }
 });
 
-submitBtn.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   handleSubmit();
 });
