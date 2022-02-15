@@ -28,7 +28,7 @@
       <main>
         <div class="main-content">
           <div class="welcome">
-            <p>Welcome in virtual library!</p>
+            <p>Welcome to virtual library!</p>
             <p>Press the icon above to add books.</p>
           </div>
           <div class="add-btn">
@@ -66,14 +66,18 @@
             id="author"
             required
           />
-          <label for="genre">Genre</label
-          ><input
-            type="text"
-            placeholder="Ex:Fantasy"
-            name="genre"
-            id="genre"
-            required
-          />
+          <label for="genre">Genre</label>
+          <select name="genre" id="genre">
+            <option value="Adventure">Adventure</option>
+            <option value="Biography">Biography</option>
+            <option value="Criminal">Crime</option>
+            <option value="Horror">Horror</option>
+            <option value="Fantasy" selected>Fantasy</option>
+            <option value="Romanse">Romance</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Thriller">Thriller</option>
+          </select>
+
           <div class="checkbox">
             <label for="readStatus">Have You read it?</label
             ><input type="checkbox" name="readStatus" id="readStatus" />
