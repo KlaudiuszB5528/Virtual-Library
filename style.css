@@ -64,7 +64,6 @@ button {
   position: absolute;
   width: 330px;
   top: -1rem;
-  z-index: 10;
   font-weight: bold;
   text-align: center;
   color: var(--color5);
@@ -141,7 +140,6 @@ header {
   padding-left: 1.5rem;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
   background-color: var(--color3);
   color: var(--color1);
   box-shadow: 1px 1px 5px var(--color2);
@@ -221,7 +219,6 @@ header {
 
 .add-btn {
   flex-basis: 100%;
-  height: 15%;
   text-align: center;
 }
 
