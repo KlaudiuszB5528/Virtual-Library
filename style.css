@@ -59,6 +59,21 @@ button {
   transform: translate(-50%, -50%) scale(1);
 }
 
+.error-msg {
+  display: none;
+  position: absolute;
+  width: 330px;
+  top: -1rem;
+  z-index: 10;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color5);
+}
+
+.error-msg.active {
+  display: block;
+}
+
 form {
   height: 80%;
   padding: 1.5rem;

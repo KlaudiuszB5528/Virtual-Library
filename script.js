@@ -15,6 +15,10 @@ class UI {
   addBook(book) {
     this.bookshelf.push(book);
   }
+
+  isInLibrary(title) {
+    return this.bookshelf.some((book) => book.title == title);
+  }
 }
 
 let myLibrary = new UI();
@@ -25,6 +29,7 @@ const submitBtn = document.getElementById("submit");
 const form = document.getElementById("form");
 const mainContent = document.querySelector(".main-content");
 const welcomeMessage = document.querySelector(".welcome");
+const errorMessage = document.querySelector(".error-msg");
 const titleInput = document.getElementById("title");
 const authorInput = document.getElementById("author");
 const genreInput = document.getElementById("genre");
@@ -42,12 +47,14 @@ addBtn.addEventListener("click", (e) => {
 closeBtn.addEventListener("click", (e) => {
   overlay.classList.remove("active");
   modal.classList.remove("active");
+  errorMessage.classList.remove("active");
 });
 
 window.addEventListener("click", (e) => {
   if (e.target == overlay) {
     overlay.classList.remove("active");
     modal.classList.remove("active");
+    errorMessage.classList.remove("active");
   }
 });
 
@@ -103,7 +110,13 @@ const handleSubmit = () => {
     genreInput.value,
     readStatus.checked
   );
-  myLibrary.addBook(newBook);
+  if (!myLibrary.isInLibrary(newBook.title)) {
+    myLibrary.addBook(newBook);
+    errorMessage.classList.remove("active");
+  } else {
+    errorMessage.classList.add("active");
+    return;
+  }
   displayBooks(myLibrary.bookshelf);
   saveInLocalStorage();
   overlay.classList.remove("active");
