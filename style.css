@@ -209,10 +209,16 @@ header {
   height: 5%;
   bottom: 6px;
   color: rgb(179, 37, 32);
+  text-shadow: 1px 1px 1px var(--color1);
+  transition: 0.2s ease-in-out;
 }
 
 .status.read {
   color: rgb(37, 133, 37);
+}
+
+.status:hover {
+  transform: scale(1.1);
 }
 
 /* buttons */
