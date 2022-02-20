@@ -131,7 +131,6 @@ const handleToggleReadStatus = (e) => {
   e.target.textContent == "Read"
     ? (e.target.textContent = "Unread")
     : (e.target.textContent = "Read");
-  setDataIndex(myLibrary.bookshelf);
   let bookElement = e.target.parentNode;
   let bookIndex = bookElement.dataset.index;
   let book = myLibrary.bookshelf[bookIndex];
@@ -169,6 +168,7 @@ const populateBooksGrid = () => {
     localBookshelf.forEach((book) => {
       myLibrary.addBook(book);
       createBookCard(book);
+      setDataIndex(myLibrary.bookshelf);
     });
   } else {
     myLibrary.bookshelf = [];
